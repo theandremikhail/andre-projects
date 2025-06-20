@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Email Assistant by Andre Mikhail Serra</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4f46e5;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 1rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    button {
+      padding: 0.75rem 1.5rem;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #3730a3;
+    }
+    .result {
+      margin-top: 2rem;
+      padding: 1rem;
+      border-left: 4px solid #4f46e5;
+      background-color: #f0f0ff;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 1rem;
+      color: #888;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AI Email Assistant</h1>
+    <p>Built by Andre Mikhail Serra · Simulated demo of LLM-powered email replies</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About the Project</h2>
+      <p>This assistant was built to intelligently process incoming Gmail messages, classify their intent (e.g., invoice, job, meeting, support), and generate context-aware replies using a local LLM (LLaMA 3). The tool replicates how a smart email bot can help professionals automate inbox management securely and efficiently.</p>
+      <ul>
+        <li>✅ Gmail API + OAuth 2.0 integration</li>
+        <li>✅ Threaded reply support with proper headers</li>
+        <li>✅ Spam/no-reply email filtering</li>
+        <li>✅ Local LLM (LLaMA 3) used for offline inference</li>
+        <li>✅ Full HTML + MIME message formatting</li>
+        <li>✅ Categorization: Invoice, Job, Meeting, Support, Spam</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Live Simulation</h2>
+      <p>Paste a sample email below and click "Run Assistant" to simulate how the assistant reads, interprets, and responds.</p>
+      <textarea id="emailInput" placeholder="Hi, can you send me the updated invoice for May?"></textarea>
+      <button onclick="runAssistant()">Run Assistant</button>
+
+      <div class="result" id="result" style="display:none;">
+        <p><strong>AI Reply:</strong> <span id="reply"></span></p>
+        <p><strong>Detected Category:</strong> <span id="category"></span></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technologies Used</h2>
+      <ul>
+        <li>Python (scripted automation)</li>
+        <li>Gmail API + Google OAuth2</li>
+        <li>LLaMA 3 local inference (custom prompt injection)</li>
+        <li>Flask for API-ready deployment</li>
+        <li>GitHub Pages (this site)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Project Goals</h2>
+      <p>This project demonstrates the automation and intelligence expected of a production-grade AI assistant for email. It's built to highlight secure, practical automation workflows using local language models, perfect for companies handling sensitive communication.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Andre Mikhail Serra | <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+  </footer>
+
+  <script>
+    function runAssistant() {
+      const email = document.getElementById("emailInput").value.trim();
+      if (!email) return;
+
+      let reply = "Thank you for your email. I'll get back to you shortly.";
+      let category = "general";
+
+      const text = email.toLowerCase();
+      if (text.includes("invoice")) {
+        category = "invoice";
+        reply = "Thank you for your email. The updated invoice will be sent shortly.";
+      } else if (text.includes("meeting")) {
+        category = "meeting";
+        reply = "I’d be happy to arrange a meeting. Are you available tomorrow at 10 AM?";
+      } else if (text.includes("job") || text.includes("application")) {
+        category = "job";
+        reply = "Thank you for your interest. We’ll review your application and get back to you soon.";
+      } else if (text.includes("support")) {
+        category = "support";
+        reply = "We appreciate your message. Our support team will respond shortly.";
+      } else if (text.includes("do not reply") || text.includes("noreply")) {
+        category = "automated";
+        reply = "This appears to be an automated email. No action is required.";
+      }
+
+      document.getElementById("reply").textContent = reply;
+      document.getElementById("category").textContent = category;
+      document.getElementById("result").style.display = "block";
+    }
+  </script>
+</body>
+</html>

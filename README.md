@@ -2,7 +2,7 @@ AI Email Assistant – Project Showcase
 
 This project simulates an AI-powered email assistant that reads incoming emails, classifies them by intent (invoice, meeting, support, etc.), and generates intelligent replies. Built by Andre Mikhail Serra, this static web demo showcases how the assistant behaves using basic JavaScript logic.
 
-Live Demo: https://yourusername.github.io/andre-portfolio
+Live Demo: https://theandremikhail.github.io/andre-projects
 
 >>Key Features
 

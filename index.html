@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Email Assistant by Andre Mikhail Serra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Automation Portfolio · Andre Mikhail Serra</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -19,37 +19,26 @@
       text-align: center;
     }
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
       background: white;
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-    textarea {
-      width: 100%;
-      height: 150px;
-      padding: 1rem;
-      font-size: 1rem;
-      margin-bottom: 1rem;
+    h2 {
+      color: #4f46e5;
     }
-    button {
-      padding: 0.75rem 1.5rem;
-      background-color: #4f46e5;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1rem;
+    ul {
+      padding-left: 1.5rem;
     }
-    button:hover {
-      background-color: #3730a3;
+    section {
+      margin-bottom: 3rem;
     }
-    .result {
-      margin-top: 2rem;
-      padding: 1rem;
-      border-left: 4px solid #4f46e5;
-      background-color: #f0f0ff;
+    img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-top: 1rem;
     }
     footer {
       text-align: center;
@@ -57,94 +46,98 @@
       padding: 1rem;
       color: #888;
     }
-    section {
-      margin-bottom: 2rem;
+    a {
+      color: #4f46e5;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>AI Email Assistant</h1>
-    <p>Built by Andre Mikhail Serra · Simulated demo of LLM-powered email replies</p>
+    <h1>Andre Serra's AI Automation Portfolio</h1>
+    <p>Solving business problems with AI, Python, and Automation Tools</p>
   </header>
 
   <main>
+
     <section>
-      <h2>About the Project</h2>
-      <p>This assistant was built to intelligently process incoming Gmail messages, classify their intent (e.g., invoice, job, meeting, support), and generate context-aware replies using a local LLM (LLaMA 3). The tool replicates how a smart email bot can help professionals automate inbox management securely and efficiently.</p>
+      <h2>📧 1. AI Email Assistant</h2>
+      <p>Automatically process Gmail inboxes, categorize emails, detect intent, and auto-reply using a local LLaMA 3 model.</p>
       <ul>
         <li>✅ Gmail API + OAuth 2.0 integration</li>
-        <li>✅ Threaded reply support with proper headers</li>
-        <li>✅ Spam/no-reply email filtering</li>
-        <li>✅ Local LLM (LLaMA 3) used for offline inference</li>
-        <li>✅ Full HTML + MIME message formatting</li>
-        <li>✅ Categorization: Invoice, Job, Meeting, Support, Spam</li>
+        <li>✅ LLaMA 3 local model inference</li>
+        <li>✅ Categorization & auto-response</li>
+        <li>✅ Google Cloud Function deployment</li>
       </ul>
+      <p><a href="https://github.com/andremikhailserra/ai-email-assistant" target="_blank">View Code on GitHub</a></p>
+      <img src="screenshots/email-assistant.png" alt="AI Email Assistant Screenshot" />
     </section>
 
     <section>
-      <h2>Live Simulation</h2>
-      <p>Paste a sample email below and click "Run Assistant" to simulate how the assistant reads, interprets, and responds.</p>
-      <textarea id="emailInput" placeholder="Hi, can you send me the updated invoice for May?"></textarea>
-      <button onclick="runAssistant()">Run Assistant</button>
-
-      <div class="result" id="result" style="display:none;">
-        <p><strong>AI Reply:</strong> <span id="reply"></span></p>
-        <p><strong>Detected Category:</strong> <span id="category"></span></p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Technologies Used</h2>
+      <h2>🚦 2. Smart Lead Router</h2>
+      <p>Accept leads from form, email, or webhook → enrich using OpenAI → auto-route to Slack + HubSpot CRM.</p>
       <ul>
-        <li>Python (scripted automation)</li>
-        <li>Gmail API + Google OAuth2</li>
-        <li>LLaMA 3 local inference (custom prompt injection)</li>
-        <li>Flask for API-ready deployment</li>
-        <li>GitHub Pages (this site)</li>
+        <li>✅ n8n for workflow orchestration</li>
+        <li>✅ Email + Webhook intake</li>
+        <li>✅ Enrichment via LLaMA 3 sentiment + intent detection</li>
+        <li>✅ Slack notification & CRM tagging</li>
       </ul>
+      <p><a href="https://github.com/andremikhailserra/smart-lead-router" target="_blank">View Code on GitHub</a></p>
+      <img src="screenshots/lead-router.png" alt="Smart Lead Router Screenshot" />
     </section>
 
     <section>
-      <h2>Project Goals</h2>
-      <p>This project demonstrates the automation and intelligence expected of a production-grade AI assistant for email. It's built to highlight secure, practical automation workflows using local language models, perfect for companies handling sensitive communication.The actual backend is not integrated in this demo, so there will not be actual replies coming from LLMs. This is purely demo only. For the actual application demo, please reach out to me.</p>
+      <h2>📄 3. OCR Document Parser + AI Chatbot</h2>
+      <p>Upload image or PDF → extract text with Tesseract → summarize using LLaMA 3 → ask questions via Slackbot.</p>
+      <ul>
+        <li>✅ OCR with Tesseract</li>
+        <li>✅ Flask app + Slack Events API</li>
+        <li>✅ Context-aware chatbot on extracted document</li>
+        <li>✅ LLaMA 3 local reasoning</li>
+      </ul>
+      <p><a href="https://github.com/andremikhailserra/ocr-chatbot" target="_blank">View Code on GitHub</a></p>
+      <img src="screenshots/ocr-chatbot.png" alt="OCR Chatbot Screenshot" />
     </section>
+
+    <section>
+      <h2>🤖 4. Slack Virtual Assistant</h2>
+      <p>AI-powered Slackbot assistant to answer FAQs, do internal tasks, and connect with tools like n8n or Notion.</p>
+      <ul>
+        <li>✅ Slackbot using Flask</li>
+        <li>✅ Slash command support</li>
+        <li>✅ JSON context memory</li>
+        <li>✅ Integrated with OpenAI and n8n</li>
+      </ul>
+      <p><a href="https://github.com/andremikhailserra/ocr-chatbot" target="_blank">Shared repo with Chatbot OCR project</a></p>
+      <img src="screenshots/slackbot.png" alt="Slack Virtual Assistant Screenshot" />
+    </section>
+
+    <section>
+      <h2>🛒 5. E-commerce Lifecycle Automation <em>(In Progress)</em></h2>
+      <p>Set up AI-personalized Klaviyo flows for welcome series, upsell, and abandoned cart recovery using Make/n8n + GPT.</p>
+      <ul>
+        <li>✅ Klaviyo + OpenAI for email copy</li>
+        <li>✅ Google Sheets, Shopify sync</li>
+        <li>✅ Flows for behavioral triggers</li>
+        <li>✅ DTC-focused automation</li>
+      </ul>
+      <p><em>Screenshots coming soon.</em></p>
+    </section>
+
+    <section>
+      <h2>🌐 Site Info</h2>
+      <ul>
+        <li>🛠️ Built using HTML/CSS, optionally deployable with GitHub Pages</li>
+        <li>📁 Screenshots should be placed inside a <code>screenshots</code> folder</li>
+        <li>📨 Contact: <a href="mailto:andremikhailserra3@gmail.com">andremikhailserra3@gmail.com</a></li>
+      </ul>
+    </section>
+
   </main>
 
   <footer>
-    &copy; 2025 Andre Mikhail Serra | <a href="https://github.com/theandremikhail" target="_blank">GitHub</a>
+    &copy; 2025 Andre Mikhail Serra · <a href="https://github.com/theandremikhail" target="_blank">GitHub</a>
   </footer>
 
-  <script>
-    function runAssistant() {
-      const email = document.getElementById("emailInput").value.trim();
-      if (!email) return;
-
-      let reply = "Thank you for your email. I'll get back to you shortly.";
-      let category = "general";
-
-      const text = email.toLowerCase();
-      if (text.includes("invoice")) {
-        category = "invoice";
-        reply = "Thank you for your email. The updated invoice will be sent shortly.";
-      } else if (text.includes("meeting")) {
-        category = "meeting";
-        reply = "I’d be happy to arrange a meeting. Are you available tomorrow at 10 AM?";
-      } else if (text.includes("job") || text.includes("application")) {
-        category = "job";
-        reply = "Thank you for your interest. We’ll review your application and get back to you soon.";
-      } else if (text.includes("support")) {
-        category = "support";
-        reply = "We appreciate your message. Our support team will respond shortly.";
-      } else if (text.includes("do not reply") || text.includes("noreply")) {
-        category = "automated";
-        reply = "This appears to be an automated email. No action is required.";
-      }
-
-      document.getElementById("reply").textContent = reply;
-      document.getElementById("category").textContent = category;
-      document.getElementById("result").style.display = "block";
-    }
-  </script>
 </body>
 </html>
